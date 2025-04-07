@@ -101,6 +101,14 @@ export default {
 				slideUp: {
 					from: { transform: 'translateY(10px)', opacity: '0' },
 					to: { transform: 'translateY(0)', opacity: '1' },
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				tilt: {
+					'0%, 100%': { transform: 'rotate(-1deg)' },
+					'50%': { transform: 'rotate(1deg)' },
 				}
 			},
 			animation: {
@@ -108,8 +116,49 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fadeIn 0.3s ease-out',
 				'slide-up': 'slideUp 0.4s ease-out',
-			}
+				'float': 'float 6s ease-in-out infinite',
+				'tilt': 'tilt 10s ease-in-out infinite',
+			},
+			transitionProperty: {
+				'height': 'height',
+				'spacing': 'margin, padding',
+			},
+			scale: {
+				'102': '1.02',
+			},
+			perspective: {
+				'1000': '1000px',
+				'2000': '2000px',
+			},
+			transformStyle: {
+				'3d': 'preserve-3d',
+			},
+			backfaceVisibility: {
+				'hidden': 'hidden',
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addUtilities }) {
+			const newUtilities = {
+				'.perspective': {
+					perspective: '1000px',
+				},
+				'.transform-style-3d': {
+					transformStyle: 'preserve-3d',
+				},
+				'.backface-hidden': {
+					backfaceVisibility: 'hidden',
+				},
+				'.transform-3d': {
+					transform: 'translateZ(20px)',
+				},
+				'.transform-3d-hover': {
+					transform: 'translateZ(40px)',
+				},
+			}
+			addUtilities(newUtilities)
+		}
+	],
 } satisfies Config;
