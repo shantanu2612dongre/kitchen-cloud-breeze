@@ -56,6 +56,8 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex md:items-center md:space-x-8">
             <NavLink to="/" label="Home" isActive={isActive('/')} isScrolled={isScrolled} />
             <NavLink to="/menu" label="Menu" isActive={isActive('/menu')} isScrolled={isScrolled} />
+            <NavLink to="/about" label="About Us" isActive={isActive('/about')} isScrolled={isScrolled} />
+            <NavLink to="/blog" label="Blog" isActive={isActive('/blog')} isScrolled={isScrolled} />
             
             {isAuthenticated && (
               <NavLink to="/orders" label="Orders" isActive={isActive('/orders')} isScrolled={isScrolled} />
@@ -132,6 +134,8 @@ const Navbar: React.FC = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-lg">
           <MobileNavLink to="/" label="Home" onClick={() => setIsMenuOpen(false)} />
           <MobileNavLink to="/menu" label="Menu" onClick={() => setIsMenuOpen(false)} />
+          <MobileNavLink to="/about" label="About Us" onClick={() => setIsMenuOpen(false)} />
+          <MobileNavLink to="/blog" label="Blog" onClick={() => setIsMenuOpen(false)} />
           
           {isAuthenticated && (
             <MobileNavLink to="/orders" label="Orders" onClick={() => setIsMenuOpen(false)} />
