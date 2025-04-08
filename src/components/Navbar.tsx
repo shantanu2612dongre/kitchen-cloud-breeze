@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className={`font-bold text-2xl transition-colors ${isScrolled ? 'text-primary dark:text-primary' : 'text-white dark:text-white'}`}>Kitchen Cloud</span>
+              <span className={`font-bold text-2xl transition-colors ${isScrolled ? 'text-primary dark:text-primary' : 'text-white dark:text-white'}`}>	Byte & Bite</span>
             </Link>
           </div>
 
